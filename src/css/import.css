@@ -1,0 +1,150 @@
+@import url(./reset.css);
+
+.container {
+  box-sizing: border-box;
+  overflow: hidden;
+  > header {
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-inline: 30px;
+    padding-block: 5px;
+    border-bottom: 1px solid var(--Color--M-Gray);
+    > img {
+      max-width: 150px;
+    }
+  }
+  > div {
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    > div:nth-of-type(1) {
+      position: relative;
+      height: calc(100vh - 72px);
+      width: 60%;
+      border-right: 1px solid var(--Color--M-Gray);
+    }
+    > .info {
+      width: 40%;
+    }
+  }
+}
+
+.info {
+  width: 40%;
+  min-width: 500px;
+  position: relative;
+  > * {
+    width: 100%;
+  }
+  > p {
+    color: rgb(94, 94, 94);
+    margin-bottom: 20px;
+  }
+}
+
+.toolBar {
+  background-color: white;
+  position: absolute;
+  left: -52px;
+  top: 0;
+  text-align: center;
+  width: 50px;
+  border: 1px solid var(--Color--M-Gray);
+  box-sizing: border-box;
+  > p {
+    background-color: rgb(73, 72, 72);
+    color: white;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  > ul {
+    width: 100%;
+    > li {
+      width: 100%;
+      font-size: 14px;
+      box-sizing: border-box;
+      justify-content: space-between;
+      &:hover {
+        cursor: pointer;
+        > img {
+          transform: scale(1.1);
+        }
+      }
+      > img {
+        max-width: 25px;
+        margin-block: 5px;
+      }
+      > p {
+        background-color: rgb(73, 72, 72);
+        width: 100%;
+        color: white;
+        line-height: 18px;
+        font-size: 12px;
+      }
+      &:nth-of-type(1) {
+        border-bottom: 1px solid var(--Color--M-Gray);
+      }
+    }
+  }
+  
+  .frequencySliderContainer {
+    .btnBox {
+      display: flex;
+    }
+  }
+}
+
+.analysis {
+  position: absolute;
+  bottom: 10px;
+  left: -310px;
+  > canvas {
+    width: 300px;
+    border-radius: 8px;
+    height: 70px;
+  }
+}
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  .subTitleP {
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    color: #7a7a7a;
+    margin-bottom: 10px;
+    text-indent: 20px;
+  }
+  > * {
+    width: 100%;
+    max-width: 800px;
+  }
+  > img {
+    margin-bottom: 20px;
+  } 
+  .fftGraph {
+    height: 50%;
+    max-height: 400px;
+  }
+  .fileValueTable {
+    margin: 0 auto;
+    width: 80%;
+    th,
+    td {
+      line-height: 50px;
+      vertical-align: middle;
+      text-align: center;
+      border: 1px solid var(--Color--M-Gray);
+    }
+    th {
+      background-color: var(--Color--S-Skyblue);
+    }
+  
+  }
+}
+
