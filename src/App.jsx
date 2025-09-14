@@ -10,6 +10,7 @@ export default function App() {
   const [frequneyRange, setFrequencyRange] = useState("elec");
   const [analysis, setAnalysis] = useState(null); 
   const [clickSpectrum, setClickSpectrum] = useState(null);
+  const [distance, setDistance] = useState(1); // m 단위 표시값
   const [currentVlaues,setCurrentVlaues] = useState({
     avgdB : '',
     peakdB : '',
@@ -42,16 +43,17 @@ export default function App() {
           isPlay={isPlay}
           onAnalysisReady={setAnalysis}
           onClickSpectrum={setClickSpectrum}
+          onDistanceChange={setDistance} // 실시간 메시랑 카메라사이 거리 0.3 ~ 3
           // 🔊 카메라-코너 배경음 설정
           ambience={{
-            distance: 0.5,          // 카메라로부터 코너까지 거리
+            distance: 3,          // 카메라로부터 코너까지 거리
             urls: audioUrls,        // 코너별 파일
-            gains: { tl: 0.001, tr: 0.001, bl: 0.001, br: 0.001,hotspot:2.0  }, // 기본 볼륨
+            gains: { tl: 0.1, tr: 0.1, bl: 0.1, br: 0.1,hotspot:1.0 }, // 기본 볼륨
             autoplay: isPlay,       // 사용자 토글로 재생 시작(첫 제스처 필요)
             hotspot: {
               pos: [7.5, 3, 0],
               distanceModel: "exponential", // 급격 감쇠
-              refDistance: 0.5 ,             // 20cm 정도 기준 거리
+              refDistance: 5 ,             // 20cm 정도 기준 거리
               maxDistance: 3.0,             // 1m 이상 멀어지면 거의 무음
               rolloff: 2.0,                 // 감쇠 속도 크게
             }
@@ -70,6 +72,7 @@ export default function App() {
           setFrequencyRange={setFrequencyRange}
           analysis={analysis}
           clickSpectrum={clickSpectrum} 
+          distance={distance}
         />
       </div>
     </div>

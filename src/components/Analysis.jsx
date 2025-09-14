@@ -1,7 +1,8 @@
 import { useEffect,useRef } from "react";
 
 export default  function Analysis ({
-  analysis
+  analysis,
+  distance
 }) {
   const canvasRef = useRef(null);
 
@@ -61,6 +62,7 @@ export default  function Analysis ({
 
   return (
     <div className="analysis">
+      <p>Cam to mesh : {distance} </p>
       <canvas ref={canvasRef} />
     </div>
   );

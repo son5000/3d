@@ -1,5 +1,5 @@
 // _______file detail page => 초음파, 열화상, 자외선 테이블 (표)_______
-export default function FileValueTable({ values, }) {
+export default function FileValueTable({ values }) {
   let tableHeaders = [
     {
       value: values?.avgdB ?? 0,
@@ -18,12 +18,6 @@ export default function FileValueTable({ values, }) {
       key: "peak_hz",
       label: "최대 주파수",
       unit: "(kHz)",
-    },
-    {
-      value: values?.distance ?? 0,
-      key: "distance",
-      label: "측정거리",
-      unit: "(m)",
     },
   ];
 

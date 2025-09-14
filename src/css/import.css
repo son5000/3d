@@ -37,7 +37,7 @@
   min-width: 500px;
   position: relative;
   > * {
-    width: 100%;
+    /* width: 100%; */
   }
   > p {
     color: rgb(94, 94, 94);
@@ -101,6 +101,12 @@
   position: absolute;
   bottom: 10px;
   left: -310px;
+  display: inline;
+  > p {
+    color: white;
+    text-align: right;
+    margin-bottom: 10px;
+  }
   > canvas {
     width: 300px;
     border-radius: 8px;
